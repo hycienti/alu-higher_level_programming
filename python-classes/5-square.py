@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Defines a Square class with size validation, a getter, and methods for area and printing.
+Defines a Square class with size validation, and methods for area and printing.
 """
 
 
