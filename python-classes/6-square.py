@@ -86,7 +86,8 @@ class Square:
         Prints the square using the character '#'.
 
         If size is 0, prints an empty line.
-        The position is used to print leading spaces and newlines as specified.
+        The position is used to print leading spaces and newlines as
+        specified.
         """
         if self.__size == 0:
             print("")
