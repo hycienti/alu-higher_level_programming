@@ -8,7 +8,6 @@ class Square:
     """
     This class defines a square with a private instance attribute size.
     """
-
     def __init__(self, size):
         """
         Initializes a new Square instance with a private size attribute.
