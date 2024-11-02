@@ -1,10 +1,5 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
-    """
-    Divides each element of my_list_1 by the corresponding element in my_list_2.
-    Returns a new list containing the results for up to list_length elements.
-    Handles different exceptions and prints appropriate messages when necessary.
-    """
     result_list = []
     for i in range(list_length):
         try:
