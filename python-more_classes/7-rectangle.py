@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Defines a Rectangle class with width, height, and other properties.
+Defines a Rectangle class with width, height, and tracking.
 """
 
 
@@ -31,7 +31,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Set the width, ensuring it's a non-negative int."""
+        """Set width, ensuring it's a non-negative int."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -45,7 +45,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """Set the height, ensuring it's a non-negative int."""
+        """Set height, ensuring it's a non-negative int."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -66,7 +66,7 @@ class Rectangle:
         Calculate perimeter.
 
         Returns:
-            int: The perimeter, or 0 if width or height is 0.
+            int: Perimeter, or 0 if width or height is 0.
         """
         if self.__width == 0 or self.__height == 0:
             return 0
@@ -74,7 +74,7 @@ class Rectangle:
 
     def __str__(self):
         """
-        Return a string of the rectangle using `print_symbol`.
+        Return a string using `print_symbol`.
 
         Returns:
             str: Rectangle as `print_symbol`, or empty if width/height is 0.
@@ -95,6 +95,6 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """Print message and decrement counter when an instance is deleted."""
+        """Print message and decrement instance counter."""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
