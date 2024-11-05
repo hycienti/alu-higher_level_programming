@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Defines a Rectangle class with width, height, and other properties.
+Defines a Rectangle class with width, height, and instance tracking.
 """
 
 
@@ -53,7 +53,7 @@ class Rectangle:
 
     def area(self):
         """
-        Calculate the area of the rectangle.
+        Calculate area of the rectangle.
 
         Returns:
             int: The area.
@@ -62,7 +62,7 @@ class Rectangle:
 
     def perimeter(self):
         """
-        Calculate the perimeter.
+        Calculate perimeter.
 
         Returns:
             int: The perimeter, or 0 if width or height is 0.
@@ -84,7 +84,7 @@ class Rectangle:
 
     def __repr__(self):
         """
-        Return a string representation that can recreate the instance.
+        Return a string to recreate the instance.
 
         Returns:
             str: A string representation for eval().
@@ -92,6 +92,6 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """Print a message when an instance is deleted and decrement counter."""
+        """Print message and decrement counter when an instance is deleted."""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
