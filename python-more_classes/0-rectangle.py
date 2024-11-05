@@ -5,6 +5,7 @@ It serves as a blueprint for future Rectangle objects
 without any attributes or methods defined at this point.
 """
 
+
 class Rectangle:
     """
     An empty class that defines a rectangle.
