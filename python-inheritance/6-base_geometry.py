@@ -11,7 +11,8 @@ class BaseGeometry:
 
     def area(self):
         """
-        Raises an Exception to indicate that the area method is not implemented.
+        Raises an Exception to indicate that the area method is not
+        implemented.
 
         Raises:
             Exception: Always, with the message "area() is not implemented".
