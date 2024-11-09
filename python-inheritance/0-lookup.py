@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 This module provides a utility function to list all available attributes
 and methods of a given object for introspection purposes.
