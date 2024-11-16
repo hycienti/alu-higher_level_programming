@@ -4,6 +4,7 @@ This module provides a function to convert a class instance
 into a dictionary for JSON serialization.
 """
 
+
 def class_to_json(obj):
     """
     Converts a class instance to a dictionary for JSON serialization.
