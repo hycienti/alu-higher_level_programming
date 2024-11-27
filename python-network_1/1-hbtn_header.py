@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-This module sends a request to a given URL and displays the X-Request-Id header value.
-It demonstrates header retrieval using urllib and sys packages.
+This module sends a request to a given URL and displays
+the X-Request-Id header value.
 """
 import urllib.request
 import sys
@@ -10,7 +10,7 @@ import sys
 def get_x_request_id(url):
     """
     Fetch and print the X-Request-Id header from the given URL.
-    
+
     Args:
         url (str): The URL to send the request to
     """
