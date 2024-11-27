@@ -1,3 +1,3 @@
 #!/bin/bash
-# Send a custom request to the server to trigger 'You got me!' response
-curl -sL -X PUT -H "Origin: HolbertonSchool" 0.0.0.0:5000/catch_me
+# Makes a request to 0.0.0.0:5000/catch_me and displays "You got me!" in the response body
+curl -sL -X PUT -d "user_id=98" -H "Origin: HolbertonSchool" 0.0.0.0:5000/catch_me
