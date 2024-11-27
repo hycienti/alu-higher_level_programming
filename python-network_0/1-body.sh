@@ -1,3 +1,3 @@
 #!/bin/bash
-# Fetch and display the body of a URL response with 200 status code
-curl -s "$1" | grep -v "HTTP" | sed '/^$/d'
+# Sends a GET request to a URL and displays the body of the response if the status code is 200
+curl -s -o /dev/null -w "%{http_code}" "$1" | grep -q "200" && curl -s "$1"
