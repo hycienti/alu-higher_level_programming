@@ -7,7 +7,10 @@ It handles both `https://alu-intranet.hbtn.io/status` and `http://0.0.0.0:5050/s
 import urllib.request
 
 if __name__ == "__main__":
-    urls = ["https://alu-intranet.hbtn.io/status", "http://0.0.0.0:5050/status"]
+    urls = [
+        "https://alu-intranet.hbtn.io/status",
+        "http://0.0.0.0:5050/status"
+    ]
     content = None
 
     # Try fetching from both URLs, prioritizing the first one.
