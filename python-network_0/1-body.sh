@@ -1,11 +1,3 @@
 #!/bin/bash
-# This script takes in a URL, sends a GET request, and displays the body of
-# the response only if the status code is 200.
-
-curl -sL -w "%{http_code}" "$1" -o temp_body | {
-    read status
-    if [ "$status" -eq 200 ]; then
-        cat temp_body
-    fi
-    rm -f temp_body
-}
+# This script sends a GET request and displays the body of the response for a 200 status code.
+[ "$(curl -s -o /dev/null -w "%{http_code}" "$1")" -eq 200 ] && curl -sL "$1"
