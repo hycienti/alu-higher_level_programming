@@ -1,21 +1,11 @@
-#!/usr/bin/python3
-"""
-This script takes GitHub credentials (username and personal access token)
-and uses the GitHub API to display the user's ID. Basic Authentication is
-used to access the information.
-"""
+#!/bin/bash
+# This script takes in a URL, sends a GET request, and displays the body of
+# the response only if the status code is 200.
 
-import sys
-import requests
-
-if __name__ == "__main__":
-    username = sys.argv[1]
-    token = sys.argv[2]
-    url = "https://api.github.com/user"
-
-    response = requests.get(url, auth=(username, token))
-
-    if response.status_code == 200:
-        print(response.json().get('id'))
-    else:
-        print("None")
+curl -sL -w "%{http_code}" "$1" -o temp_body | {
+    read status
+    if [ "$status" -eq 200 ]; then
+        cat temp_body
+    fi
+    rm -f temp_body
+}
