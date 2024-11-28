@@ -1,0 +1,26 @@
+k>>> from 5-text_indentation import text_indentation
+>>> text_indentation("Hello. How are you?")
+Hello.
+
+How are you?
+>>> text_indentation("What? Are you serious? This is amazing!")
+What?
+
+Are you serious?
+
+This is amazing!
+>>> text_indentation("Well: this is surprising.")
+Well:
+
+this is surprising.
+>>> text_indentation("   Leading spaces should be stripped.   ")
+Leading spaces should be stripped.
+>>> text_indentation("No delimiters here")
+No delimiters here
+>>> try:
+...     text_indentation(123)
+... except Exception as e:
+...     print(e)
+text must be a string
+>>> text_indentation("")
+<BLANKLINE>
