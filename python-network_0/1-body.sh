@@ -1,3 +1,21 @@
-#!/bin/bash
-# Sends a GET request to a URL and displays the body of the response if the status code is 200
-curl -s -o /dev/null -w "%{http_code}" "$1" | grep -q "200" && curl -s "$1"
+#!/usr/bin/python3
+"""
+This script takes GitHub credentials (username and personal access token)
+and uses the GitHub API to display the user's ID. Basic Authentication is
+used to access the information.
+"""
+
+import sys
+import requests
+
+if __name__ == "__main__":
+    username = sys.argv[1]
+    token = sys.argv[2]
+    url = "https://api.github.com/user"
+
+    response = requests.get(url, auth=(username, token))
+
+    if response.status_code == 200:
+        print(response.json().get('id'))
+    else:
+        print("None")
