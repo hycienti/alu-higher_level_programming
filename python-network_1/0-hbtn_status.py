@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 """
-This script fetches a status URL using the urllib package and displays the response.
-It handles both `https://alu-intranet.hbtn.io/status` and `http://0.0.0.0:5050/status`.
+This script fetches a status URL using the urllib package and displays
+ the response. It handles both `https://alu-intranet.hbtn.io/status` and
+ `http://0.0.0.0:5050/status`.
 """
 
 import urllib.request
+
 
 if __name__ == "__main__":
     urls = [
@@ -18,8 +20,8 @@ if __name__ == "__main__":
         try:
             with urllib.request.urlopen(url) as response:
                 content = response.read()
-                break  # Exit loop if successful
-        except Exception as e:
+                break
+        except Exception:
             continue
 
     if content:
