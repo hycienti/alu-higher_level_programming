@@ -1,3 +1,3 @@
-#!/bin/bash 
-# takes in a url and display the content length 
-curl -sI "$1" | grep 'Content-Length'| cut -d " " -f2
+#!/bin/bash
+# Displays the body of the response from the provided URL, following up to 5 redirects
+curl -sLf "$1"
