@@ -1,29 +1,42 @@
 #!/usr/bin/python3
 """
-This module provides a function to print text with indentation.
+prints text in special format
 """
 
 
 def text_indentation(text):
-    """
-    Prints a text with 2 new lines after each of these characters: ., ? and :
-
+    """prints a text with 2 new lines after each of these characters: . ? :
     Args:
-        text (str): The input text to format and print.
-
+        text (str): a string
     Raises:
-        TypeError: If `text` is not a string.
+        TypeError: if text is not a string
     """
-    if not isinstance(text, str):
+    new = ""
+    substring = ""
+    temp = [] * 2
+    flag = 0
+
+    if type(text) is not str:
         raise TypeError("text must be a string")
 
-    # Define characters that require indentation
-    delimiters = {'.', '?', ':'}
-    output = ""
-    for char in text:
-        output += char
-        if char in delimiters:
-            output += "\n\n"
-    # Split and strip each line to remove trailing spaces
-    lines = [line.strip() for line in output.split("\n")]
-    print("\n".join(lines), end="")
+    for i in range(len(text)):
+        if i < len(text) and text[i] == '.' or text[i] == '?'\
+           or text[i] == ':':
+            if flag == 0:
+                temp = text.split(text[i], 1)
+                flag = 1
+            else:
+                temp = substring.split(text[i], 1)
+            new += temp[0].lstrip(' ') + text[i]
+            substring = temp[1]
+            print("{:s}".format(new))
+            print()
+            new = ""
+    if flag == 0:
+        text = text.lstrip(' ')
+        text = text.rstrip(' ')
+        print("{:s}".format(text), end="")
+    else:
+        substring = substring.lstrip(' ')
+        substring = substring.rstrip(' ')
+        print("{:s}".format(substring), end="")
