@@ -1,3 +1,3 @@
-#!/bin/bash
-# This script sends a GET request and displays the body of the response for a 200 status code.
-[ "$(curl -s -o /dev/null -w "%{http_code}" "$1")" -eq 200 ] && curl -sL "$1"
+#!/bin/bash 
+# takes in a url and display the content length 
+curl -sI "$1" | grep 'Content-Length'| cut -d " " -f2
