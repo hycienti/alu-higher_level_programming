@@ -1,34 +1,19 @@
 #!/usr/bin/python3
 """
-This script fetches a status URL using the urllib package and displays
- the response. It handles both `https://alu-intranet.hbtn.io/status` and
- `http://0.0.0.0:5050/status`.
+This script fetches the status from a given URL using the urllib library.
 """
+
 
 import urllib.request
 
+url = 'https://intranet.hbtn.io/status'
+if url.startswith('https://'):
+    url = 'https://alu-intranet.hbtn.io/status'
 
-if __name__ == "__main__":
-    urls = [
-        "https://alu-intranet.hbtn.io/status",
-        "http://0.0.0.0:5050/status"
-    ]
-    content = None
-
-    # Try fetching from both URLs, prioritizing the first one.
-    for url in urls:
-        try:
-            with urllib.request.urlopen(url) as response:
-                content = response.read()
-                break
-        except Exception:
-            continue
-
-    if content:
-        # Printing the output in the required format
+if __name__ == '__main__':
+    with urllib.request.urlopen(url) as res:
+        content = res.read()
         print("Body response:")
         print("\t- type: {}".format(type(content)))
         print("\t- content: {}".format(content))
-        print("\t- utf8 content: {}".format(content.decode("utf-8")))
-    else:
-        print("Failed to fetch the status from both URLs.")
+        print("\t- utf8 content: {}".format(content.decode('utf-8')))
