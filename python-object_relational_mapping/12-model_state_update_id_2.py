@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""script that adds the State object
-“Louisiana” to the database hbtn_0e_6_usa
+"""script that changes the name of a State object
+from the database hbtn_0e_6_usa
 """
 
 import sys
@@ -17,8 +17,9 @@ if __name__ == "__main__":
     session = Session()
     Base.metadata.create_all(engine)
 
-    state = State(name="Louisiana")
-    session.add(state)
+    state = session.query(State).filter(State.id == 2).first()
+
+    state.name = "New Mexico"
+
     session.commit()
-    print(state.id)
     session.close()
